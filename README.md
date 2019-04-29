@@ -1,3 +1,22 @@
+# Pre-requisites
+
+* Terraform
+* AWS CLI
+* Bash Console
+
+# Setup
+Create tfstate S3 bucket
+
+```
+./bin/terraform.sh --action plan --project experiment --region eu-west-1 --bootstrap
+```
+
+Create component 
+```
+./bin/terraform.sh --action plan --component awsbucket --environment testing --project experiment --region eu-west-1
+```
+
+
 # terraformscaffold
 
 A framework for controlling multi-environment multi-component terraform-managed AWS infrastructure

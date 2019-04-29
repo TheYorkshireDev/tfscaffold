@@ -635,10 +635,10 @@ case "${action}" in
     # This is pretty nasty, but then so is Hashicorp's approach to backwards compatibility
     # at some point in the future we can deprecate support for <0.10 and remove this in favour
     # of always having auto-approve set to true
-    if [ "${action}" == "apply" -a $(terraform version | head -n1 | cut -d" " -f2 | cut -d"." -f2) -gt 9 ]; then
+    # if [ "${action}" == "apply" -a $(terraform version | head -n1 | cut -d" " -f2 | cut -d"." -f2) -gt 9 ]; then
       echo "Compatibility: Adding to terraform arguments: -auto-approve=true";
       extra_args+=" -auto-approve=true";
-    fi;
+    # fi;
 
     if [ -n "${build_id}" ]; then
       mkdir -p build;
