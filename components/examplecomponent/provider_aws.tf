@@ -2,11 +2,13 @@
 provider "aws" {
   region = "${var.region}"
 
+  version = "~> 2.7"
+
   # For no reason other than redundant safety
   # we only allow the use of the AWS Account
   # specified in the environment variables.
   # This helps to prevent accidents.
   allowed_account_ids = [
-    "${var.account_id}",
+    "${var.aws_account_id}",
   ]
 }
